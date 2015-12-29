@@ -1,0 +1,11 @@
+{
+  "name": "keyword-wrangler",
+  "version": "0.0.1",
+  "description": "A keyword management tool",
+  "main": "src/backend/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
