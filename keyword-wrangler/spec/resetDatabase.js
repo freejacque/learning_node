@@ -27,5 +27,5 @@ var resetDatabase = function(dbSession, callback) {
   );
 
 };
-
+//  exports the resetDatabase function so it can be used in other files
 module.exports = resetDatabase;
