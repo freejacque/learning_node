@@ -7,6 +7,7 @@ describe('The API', function() {
   //  tests for correct server response
   //  ./node_modules/.bin/jasmine-node --verbose --captureExceptions ./spec/
   it('should respond to a GET request at /api/keywords/', function(done) {
+    // expected content from the DB
     var expected = {
       "_items": [
         {'id': 1, 'value': 'Aubergine', 'categoryID': 1},
