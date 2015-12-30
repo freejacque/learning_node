@@ -1,7 +1,7 @@
 'use strict';
 
 var async = require('async');
-
+// uses a dbSession object
 var resetDatabase = function(dbSession, callback) {
 
   async.series(
