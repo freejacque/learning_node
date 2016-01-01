@@ -22,43 +22,43 @@ describe('The API', function() {
     async.series(
       [
 
-      function(callback) {
-        dbSession.insert(
-          'keyword',
-          {'value': 'Aubergine', 'categoryID': 1},
-          function(err) { callback(err) });
-      },
+        function(callback) {
+          dbSession.insert(
+            'keyword',
+            {'value': 'Aubergine', 'categoryID': 1},
+            function(err) { callback(err) });
+        },
 
-      function(callback) {
-        dbSession.insert(
-          'keyword',
-          {'value': 'Onion', 'categoryID': 1},
-          function(err) { callback(err) });
-      },
+        function(callback) {
+          dbSession.insert(
+            'keyword',
+            {'value': 'Onion', 'categoryID': 1},
+            function(err) { callback(err) });
+        },
 
-      function(callback) {
-        dbSession.insert(
-          'keyword',
-          {'value': 'Knife', 'categoryID': 2},
-          function(err) { callback(err) });
+        function(callback) {
+          dbSession.insert(
+            'keyword',
+            {'value': 'Knife', 'categoryID': 2},
+            function(err) { callback(err) });
+        }
+
+      ],
+
+      function(err, results) {
+        request.get(
+          {
+            'url': 'http://localhost:8080/api/keywords/',
+            'json': true
+          },
+          function(err, res, body) {
+            expect(res.statusCode).toBe(200);
+            expect(body).toEqual(expected);
+            done();
+          }
+        );
       }
 
-    ],
-
-    function(err, results) {
-      request.get(
-        {
-          'url': 'http://localhost:8080/api/keywords/',
-          'json': true
-        },
-        function(err, res, body) {
-          expect(res.statusCode).toBe(200);
-          expect(body).toEqual(expected);
-          done();
-        }
-      );
-    }
-
-  );
+    );
 
 });
