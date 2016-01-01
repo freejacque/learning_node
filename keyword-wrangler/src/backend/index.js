@@ -4,7 +4,7 @@ var Percolator = require('percolator').Percolator;
 var dbSession = require('../../src/backend/dbSession.js');
 
 var port = 8080;
-var server = Percolator({'port': port, 'autolink': false});
+var server = Percolator({'port': port, 'autoLink': false});
 
 server.route('/api/keywords',
   {
