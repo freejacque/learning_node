@@ -9,7 +9,16 @@ var server = Percolator({'port': port, 'autolink': false});
 server.route('/api/keywords',
   {
     GET: function(request, response) {
-      response.object({'foo': 'bar'}).send()
+      dbSession.fetchAll('SELECT id, value, categoryID FROM keyword ORDER BY id',
+
+      function(err, rows) {
+        if(err) {
+          console.log(err);
+          response.status.internalServerError(err);
+        } else {
+          response.collection(rows).send();
+        }
+      });
     }
   }
 );
