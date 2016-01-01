@@ -68,3 +68,6 @@ describe('The API', function() {
   });
 
 });
+
+// this spec empties the db, inserts test data and expects
+// the web service API to respond with the inserted data
