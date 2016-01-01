@@ -1,6 +1,9 @@
 'use strict';
 
 var request = require('request');
+var dbSession = require('../../src/backend/dbSession.js');
+var resetDatabase = require('../resetDatabase.js');
+var async = require('async');
 
 describe('The API', function() {
 
