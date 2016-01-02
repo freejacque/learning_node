@@ -8,6 +8,18 @@ var async = require('async');
 
 describe('The API', function() {
 
+  var server;
+
+  beforeEach(function(done) {
+    server = Server('8081');
+    server.listen(function(err) {
+      resetDatabase(dbSession, function() {
+        done(err);
+      });
+    });
+  });
+
+
   //  tests for correct server response
   //  ./node_modules/.bin/jasmine-node --verbose --captureExceptions ./spec/
   it('should respond to a GET request at /api/keywords/', function(done) {
