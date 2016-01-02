@@ -11,6 +11,7 @@ describe('The API', function() {
   var server;
 
   beforeEach(function(done) {
+    // using a different port for tests
     server = Server('8081');
     server.listen(function(err) {
       resetDatabase(dbSession, function() {
