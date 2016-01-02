@@ -8,14 +8,14 @@ var Server = function(port) {
 
   server.route('/api/keywords',
     {
-      GET: function(request, res) {
+      GET: function(request, response) {
         dbSession.fetchAll('SELECT id, value, categoryID FROM keyword ORDER BY id',
           function(err, rows) {
             if(err) {
               console.log(err);
-              res.status.internalServerError(err);
+              response.status.internalServerError(err);
             } else {
-              res.collection(rows).send();
+              response.collection(rows).send();
             }
           });
       }
