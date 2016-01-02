@@ -65,6 +65,7 @@ describe('The API', function() {
       ],
 
       function(err, results) {
+        if(err) throw(err);
         request.get(
           {
             'url': 'http://localhost:8080/api/keywords/',
