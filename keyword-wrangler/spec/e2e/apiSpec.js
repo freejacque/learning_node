@@ -42,10 +42,6 @@ describe('The API', function() {
       [
 
         function(callback) {
-          resetDatabase(dbSession, callback);
-        },
-
-        function(callback) {
           dbSession.insert(
             'keyword',
             {'value': 'Aubergine', 'categoryID': 1},
