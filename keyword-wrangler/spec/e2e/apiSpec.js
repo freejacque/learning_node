@@ -19,7 +19,13 @@ describe('The API', function() {
     });
   });
 
-
+  afterEach(function(done) {
+    server.close(function() {
+      resetDatabase(dbSession, function() {
+        done();
+      });
+    });
+  });
   //  tests for correct server response
   //  ./node_modules/.bin/jasmine-node --verbose --captureExceptions ./spec/
   it('should respond to a GET request at /api/keywords/', function(done) {
