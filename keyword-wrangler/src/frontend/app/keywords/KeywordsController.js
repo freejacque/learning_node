@@ -70,5 +70,34 @@
     };
 
 
-  })
-})
+    $scope.createKeyword = function(newKeyword) {
+      $scope.$broadcast('ngGridEventEndCellEdit');
+      if(newKeyword.value.length > 0) {
+        KeywordsRepository.createOne(newKeyword).then(function() {
+          KeywordsRepository.readAll().then(function(keywords) {
+            $scope.keywords = keywords;
+            });
+          });
+      }
+    };
+
+    $scope.deleteKeyword = function(keyword) {
+      $scope.$broadcast('ngGridEventEndCellEdit');
+      KeywordsRepository.deleteOne(keyword).then(function() {
+        KeywordsRepository.readAll().then(function(keywords) {
+          $scope.keywords = keywords;
+        });
+      });
+    };
+
+    $scope.stopEditingKeywordCategory = function() {
+      $scope.$broadcast('ngGridEventEndCellEdit');
+    };
+
+    $scope.$on('ngGridEventRows', function(newRows) {
+      $scope.$broadcast('ngGridEventEndCellEdit');
+    });
+
+  });
+
+})();
