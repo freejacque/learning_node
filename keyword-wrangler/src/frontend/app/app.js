@@ -15,3 +15,6 @@
     }]);
 
 })();
+
+//  defines the main entry point for AngularJS apps.
+//  sets up dependencies and in-app routing
