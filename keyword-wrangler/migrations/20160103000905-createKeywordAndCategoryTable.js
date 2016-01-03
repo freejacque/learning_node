@@ -21,5 +21,9 @@ exports.up = function(db, callback) {
 };
 
 exports.down = function(db, callback) {
-  callback();
+  async.series(
+    [
+      db.dropTable.bind(db, 'keyword'),
+      db.dropTable.bind(db, 'category')
+    ], callback);
 };
