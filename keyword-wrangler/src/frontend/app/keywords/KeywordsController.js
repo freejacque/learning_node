@@ -33,6 +33,8 @@
       }
     });
 
+    /* when the frontend loads the controller will immediately load all
+    keyword categories and categories from the API */
     KeywordCategoriesRepository.readAll().then(function(keywordCategories) {
       $scope.keywordCategories = keywordCategories;
       KeywordsRepository.readAll().then(function(keywords) {
