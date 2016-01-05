@@ -16,6 +16,8 @@
 
     $scope.resolveEntity = resolveEntity;
 
+    /* A repo is the connection btwn this controller and the REST API
+     One is used for keyword categories */
     var KeywordCategoriesRepository = new RepositoryFactory({
       endpoint: 'keywords/categories',
       retrieveItems: function(data) {
