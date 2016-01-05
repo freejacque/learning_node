@@ -42,6 +42,7 @@
       });
     });
 
+    /* this is the grid */
     $scope.keywordsGridOptions = {
       data: 'keywords',
       enableCellSelection: false,
