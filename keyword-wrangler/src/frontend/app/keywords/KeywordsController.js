@@ -25,6 +25,13 @@
       }
     });
 
+    var KeywordsRepository = new RepositoryFactory({
+      endpoint: 'keywords',
+      retrieveItems: function(data) {
+        return data._items;
+      }
+    });
+
     KeywordCategoriesRepository.readAll().then(function(keywordCategories) {
       $scope.keywordCategories = keywordCategories;
       KeywordsRepository.readAll().then(function(keywords) {
