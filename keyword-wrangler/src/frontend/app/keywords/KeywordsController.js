@@ -25,6 +25,7 @@
       }
     });
 
+    /* a repo for keywords */
     var KeywordsRepository = new RepositoryFactory({
       endpoint: 'keywords',
       retrieveItems: function(data) {
