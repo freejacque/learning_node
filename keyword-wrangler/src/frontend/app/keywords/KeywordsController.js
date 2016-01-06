@@ -67,6 +67,7 @@
           displayName: 'value'
         },
         {
+          /* use our own template for keyword category */
           field: 'keywordCategoryID',
           displayName: 'Category',
           cellTemplate: 'app/keywords/partials/keywordCategoryGridCell.html',
