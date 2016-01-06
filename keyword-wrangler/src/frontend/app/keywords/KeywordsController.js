@@ -91,9 +91,14 @@
         KeywordsRepository.createOne(newKeyword).then(function() {
           KeywordsRepository.readAll().then(function(keywords) {
             $scope.keywords = keywords;
-            });
           });
+        });
       }
+    };
+
+    $scope.updateKeyword = function(keyword) {
+      $scope.$broadcast('ngGridEventEndCellEdit');
+      KeywordsRepository.updateOne(keyword);
     };
 
     $scope.deleteKeyword = function(keyword) {
