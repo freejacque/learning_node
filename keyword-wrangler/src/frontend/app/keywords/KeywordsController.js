@@ -44,7 +44,7 @@
 
     /* this is the grid */
     $scope.keywordsGridOptions = {
-      data: 'keywords',
+      data: 'keywords', // this makes the grid use $scope.keywords data
       enableCellSelection: false,
       enableCellEdit: true,
       keepLastSelected: false,
