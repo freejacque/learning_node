@@ -83,7 +83,8 @@
       ]
     };
 
-
+    /* == Frontend Operations == */
+    //  these functions are called on button click
     $scope.createKeyword = function(newKeyword) {
       $scope.$broadcast('ngGridEventEndCellEdit');
       if(newKeyword.value.length > 0) {
