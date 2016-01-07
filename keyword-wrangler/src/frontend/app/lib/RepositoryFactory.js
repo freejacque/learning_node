@@ -37,6 +37,15 @@
       return deferred.promise;
     };
 
+    Repository.prototype.updateOne = function(item) {
+      var self  = this;
+      var deferred = $q.defer();
+      Restangular.one(self.endpoint, item.id).post('', item).then(function(response) {
+        deferred.resolve(response);
+      });
+      return deferred.promise;
+    };
+
     Repository.prototype.deleteOne = function(item) {
       var self = this;
       var deferred = $q.defer();
