@@ -62,4 +62,5 @@
 })();
 
 // this is a wrapper for all the API operations needed for
-// keywords and keyword categories
+// keywords and keyword categories:
+// Reading, creating, updating, deleting & merging
