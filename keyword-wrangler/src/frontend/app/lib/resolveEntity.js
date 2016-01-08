@@ -23,3 +23,5 @@
   }
 
 })();
+
+// helper function needed to go from category IDs to category names
