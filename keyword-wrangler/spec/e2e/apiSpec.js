@@ -42,7 +42,7 @@ describe('The API', function() {
     async.series(
       [
         function(callback) {
-          resetDatabase(dbSession, callback)''
+          resetDatabase(dbSession, callback);
         },
 
         function(callback) {
