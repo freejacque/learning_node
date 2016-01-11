@@ -86,8 +86,57 @@ describe('The API', function() {
     );
 
   });
+// the above empties the db, inserts test data and expects
+// the web service API to respond with the inserted
+
+  it('should respond to a GET request at /api/keywords/categories/', function(done) {
+    var expected = {
+      "_items": [
+        {'id': 1, 'name': 'Vegetable'},
+        {'id': 2, 'name': 'Utility'}
+      ]
+    };
+
+    async.series(
+      [
+
+        function(callback) {
+          resetDatabase(dbSession, callback);
+        },
+
+        function(callback) {
+          dbSession.insert(
+            'category',
+            {'name': 'Vegetable'},
+            function(err) { callback(err) });
+        },
+
+        function(callback) {
+          dbSession.insert(
+            'category',
+            {'name': 'Utility'},
+            function(err) { callback(err) });
+        }
+
+      ],
+
+      function(err, results) {
+        if(err) throw(err);
+        request.get(
+          {
+            'url': 'http://localhost:8081/api/keywords/categories/',
+            'json': true
+          },
+          function(err, res, body) {
+            expect(res.statusCode).toBe(200);
+            expect(body).toEqual(expected);
+            done();
+          }
+        );
+      }
+
+    );
+
+  });
 
 });
-
-// this spec empties the db, inserts test data and expects
-// the web service API to respond with the inserted data
