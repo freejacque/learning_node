@@ -89,6 +89,7 @@ describe('The API', function() {
 // the above empties the db, inserts test data and expects
 // the web service API to respond with the inserted
 
+  //  this should statement checks for categories data
   it('should respond to a GET request at /api/keywords/categories/', function(done) {
     var expected = {
       "_items": [
