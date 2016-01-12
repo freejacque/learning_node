@@ -13,19 +13,19 @@ var resetDatabase = function(dbSession, callback) {
 
         function(callback) {
           dbSession.remove('keyword', '1', function(err) {
-            callback(err)
+            callback(err);
           });
         },
 
         function(callback) {
           dbSession.remove('category', '1', function(err) {
-            callback(err)
+            callback(err);
           });
         },
 
         function(callback) {
           dbSession.remove('sqlite_sequence', '1', function(err) {
-            callback(err)
+            callback(err, null);
           });
         }
 
@@ -45,13 +45,13 @@ var resetDatabase = function(dbSession, callback) {
 
         function(callback) {
           dbSession.remove('TRUNCATE keyword', [], function(err) {
-            callback(err)
+            callback(err);
           });
         },
 
         function(callback) {
           dbSession.remove('TRUNCATE category', [], function(err) {
-            callback(err)
+            callback(err);
           });
         }
 
