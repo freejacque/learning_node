@@ -17,3 +17,5 @@
 
   module.exports = env;
 })();
+
+// detects the environment env variable KW_ENV
