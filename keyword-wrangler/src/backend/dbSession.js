@@ -20,3 +20,5 @@ if(dbOptions.driver === 'sqlite3') {
 
 dbWrapper.connect();
 module.exports = dbWrapper;
+
+//  db connection logic uses matching db connection config
