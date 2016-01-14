@@ -37,7 +37,7 @@ var resetDatabase = function(dbSession, callback) {
     );
 
   }
-
+  //  for production db
   if(dbOptions.driver === 'mysql') {
 
     async.series(
