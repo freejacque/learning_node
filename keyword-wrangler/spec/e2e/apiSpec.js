@@ -142,7 +142,7 @@ describe('The API', function() {
 
   it('should create a new keyword when receiving a POST request at /api/keywords/', function(done) {
     var expected = {
-      "_items" [
+      "_items": [
       {'id': 1, 'value': 'Aubergine', 'categoryID': 1},
       {'id': 2, 'value': 'Onion', 'categoryID': 1}
       ]
@@ -197,5 +197,6 @@ describe('The API', function() {
           );
         });
     });
+});
 
 });
