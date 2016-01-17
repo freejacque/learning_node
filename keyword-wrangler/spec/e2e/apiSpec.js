@@ -81,11 +81,8 @@ describe('The API', function() {
             done();
           }
         );
-      }
-
-    );
-
-  });
+      });
+    });
 // the above empties the db, inserts test data and expects
 // the web service API to respond with the inserted
 
@@ -196,7 +193,7 @@ describe('The API', function() {
 
           );
         });
-    });
-});
-
+      }
+    );
+  });
 });
