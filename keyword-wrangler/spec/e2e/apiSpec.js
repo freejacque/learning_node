@@ -83,8 +83,8 @@ describe('The API', function() {
         );
       });
     });
-// the above empties the db, inserts test data and expects
-// the web service API to respond with the inserted
+  // the above empties the db, inserts test data and expects
+  // the web service API to respond with the inserted
 
   //  this should statement checks for categories data
   it('should respond to a GET request at /api/keywords/categories/', function(done) {
@@ -129,12 +129,8 @@ describe('The API', function() {
             expect(res.statusCode).toBe(200);
             expect(body).toEqual(expected);
             done();
-          }
-        );
-      }
-
-    );
-
+          });
+      });
   });
 
   it('should create a new keyword when receiving a POST request at /api/keywords/', function(done) {
