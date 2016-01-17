@@ -17,7 +17,26 @@ var Server = function(port) {
             } else {
               response.collection(rows).send();
             }
-          });
+        });
+      },
+
+      POST: function(request, response) {
+        request.onJson(function(err, newKeyword) {
+          if(err) {
+            console.log(err);
+            response.status.internalServerError(err);
+          } else {
+            dbSession.query('INSERT INTO keyword (value, categoryID) VALUES (?, ?);',
+              [newKeyword.value, newKeyword.categoryID], function(err, result) {
+                if(err) {
+                  console.log(err);
+                  response.status.internalServerError(err);
+                } else {
+                  response.object({'status': 'ok', 'id': result.insertID}).send();
+                }
+              });
+          }
+        });
       }
     }
   );
