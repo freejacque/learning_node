@@ -41,7 +41,7 @@ var Server = function(port) {
       }
     }
   );
-
+  //  this route has to be defined before /api/keywords/:id so that the /categories requests won't be interpretted as /:id
   server.route('/api/keywords/categories',
   {
     GET: function(req, res) {
