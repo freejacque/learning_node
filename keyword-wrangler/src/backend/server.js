@@ -56,6 +56,28 @@ var Server = function(port) {
     }
   });
 
+  server.route('/api/keywords/:id',
+    {
+      POST: function(request, response) {
+        var keywordID = request.uri.child();
+        request.onJson(function(err, keyword) {
+          if(err) {
+            console.log(err);
+            response.status.internalServerError(err);
+          } else {
+            dbSession.query('UPDATE keyword SET value = ?, categoryID = ? WHERE keyword.id = ?;', [keyword.value, keyword.categoryID, keywordID], function(err, result) {
+              if(err) {
+                console.log(err);
+                response.status.internalServerError(err);
+              } else {
+                response.object({'status': 'ok'}).send();
+              }
+            });
+          }
+        });
+      }
+    });
+
   return server;
 };
 
