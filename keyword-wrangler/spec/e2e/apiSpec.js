@@ -276,7 +276,7 @@ describe('The API', function() {
           dbSession.insert(
             'keyword',
             {'value': 'Aubergine', 'categoryID': 1},
-            function(err { callback(err) });
+            function(err) { callback(err) });
         },
 
         function(callback) {
