@@ -33,7 +33,7 @@ var Server = function(port) {
                   console.log(err);
                   response.status.internalServerError(err);
                 } else {
-                  response.object({'status': 'ok', 'id': result.insertID}).send();
+                  response.object({'status': 'ok', 'id': result.insertId}).send();
                 }
               });
           }
@@ -65,7 +65,7 @@ var Server = function(port) {
             console.log(err);
             response.status.internalServerError(err);
           } else {
-            dbSession.query('UPDATE keyword SET value = ?, categoryID = ? WHERE keyword.id = ?;', [keyword.value, keyword.categoryID, keywordID], function(err, result) {
+            dbSession.query('UPDATE keyword SET value = ?, categoryID = ? WHERE keyword.id = ?;', [keyword.value, keyword.categoryID, keywordId], function(err, result) {
               if(err) {
                 console.log(err);
                 response.status.internalServerError(err);
@@ -73,6 +73,18 @@ var Server = function(port) {
                 response.object({'status': 'ok'}).send();
               }
             });
+          }
+        });
+      },
+
+      DELETE: function(request, response) {
+        var keywordID = req.uri.child();
+        dbSession.query('DELETE FROM keyword WHERE keyword.id = ?;', [keywordId], function(err, result) {
+          if(err) {
+            console.log(err);
+            response.status.internalServerError(err);
+          } else {
+            response.object({'status': 'ok'}).send();
           }
         });
       }
