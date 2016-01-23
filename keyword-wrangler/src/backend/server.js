@@ -34,7 +34,7 @@ var Server = function(port) {
                   response.status.internalServerError(err);
                 } else {
                   //  TODO fix this error for insertId
-                  response.object({'status': 'ok', 'id': result.insertId}).send();
+                  response.object({'status': 'ok', 'id': result.insertID}).send();
                 }
               });
           }
