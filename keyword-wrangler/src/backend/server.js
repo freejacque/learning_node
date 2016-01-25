@@ -34,7 +34,8 @@ var Server = function(port) {
                   response.status.internalServerError(err);
                 } else {
                   //  TODO fix this error for insertId
-                  console.log(response);
+                  // the result is undefined, find out why
+                  console.log(result);
                   response.object({'status': 'ok', 'id': result.insertId}).send();
                 }
               });
