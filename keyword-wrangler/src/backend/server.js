@@ -1,6 +1,7 @@
 'use strict';
 
 var Percolator = require('percolator').Percolator;
+var JSV = require('./jsv').JSV;
 var dbSession = require('../../src/backend/dbSession.js');
 
 var Server = function(port) {
