@@ -21,7 +21,8 @@ var Server = function(port) {
       },
 
       POST: function(request, response) {
-        // onJson = Percolator method that provides post request body data
+        // onJson = Percolator method that provides post request body
+        // can't find good docs about this method, I don't think it's working
         request.onJson(function(err, newKeyword) {
           if(err) {
             console.log(err);
