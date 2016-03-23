@@ -1,0 +1,19 @@
+{
+  "test": {
+    "driver": "sqlite3",
+    "filename": "/var/tmp/first-api.test.sqlite"
+  },
+
+  "dev": {
+     "driver": "sqlite3",
+     "filename": "/var/tmp/first-api.dev.sqlite"
+  },
+
+  "production": {
+      "driver": "mysql",
+      "host": "localhost",
+      "user": "root",
+      "password": "root",
+      "database": "first-api"
+  }
+}
