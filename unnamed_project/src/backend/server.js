@@ -19,6 +19,10 @@ var Server = function(port) {
           }
         }
       );
+    },
+
+    POST: function(request, response) {
+
     }
   }
 }
