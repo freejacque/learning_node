@@ -17,8 +17,7 @@ var Server = function(port) {
           } else {
             response.collection(rows).send();
           }
-        }
-      );
+      });
     },
 
     POST: function(request, response) {
