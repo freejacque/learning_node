@@ -16,5 +16,5 @@ if(dbOptions.driver === 'sqlite3') {
     'database': dbOptions.database
   });
 } else {
-
+  throw( new Error('No matching database config found.'));
 }
