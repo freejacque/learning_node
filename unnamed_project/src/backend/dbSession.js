@@ -18,3 +18,5 @@ if(dbOptions.driver === 'sqlite3') {
 } else {
   throw( new Error('No matching database config found.'));
 }
+
+dbWrapper.connect();
