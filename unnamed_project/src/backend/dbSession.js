@@ -20,3 +20,4 @@ if(dbOptions.driver === 'sqlite3') {
 }
 
 dbWrapper.connect();
+module.exports = dbWrapper;
