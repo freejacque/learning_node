@@ -15,4 +15,5 @@
     throw new Error('"' + env + '" is not a valid environment');
   }
 
-})
+  module.exports = env;
+})();
