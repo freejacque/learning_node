@@ -9,4 +9,10 @@
     env = 'test';
   }
 
+  if(!( env === 'test'
+     || env === 'dev'
+     || env === 'production')) {
+    throw new Error('"' + env + '" is not a valid environment');
+  }
+
 })
